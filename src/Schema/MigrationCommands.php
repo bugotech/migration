@@ -13,6 +13,15 @@ trait MigrationCommands
         });
     }
 
+    /**
+     * Excluir tabela.
+     * @param $tableName
+     */
+    public function dropTable($tableName)
+    {
+        $this->drop($tableName);
+    }
+
     public function createFieldString($tableName, $nome, $len)
     {
         $this->table($tableName, function(Table $table) use($nome, $len) {
