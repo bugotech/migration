@@ -3,7 +3,6 @@
 use ArrayAccess;
 use JsonSerializable;
 use Illuminate\Support\Fluent;
-use Bugotech\Migration\Schema\Table;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -26,7 +25,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     public function __construct(Table $table, $base)
     {
         $this->table = $table;
-        $this->base  = $base;
+        $this->base = $base;
     }
 
     /**
@@ -40,8 +39,8 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Get an attribute from the container.
      *
-     * @param  string  $key
-     * @param  mixed   $default
+     * @param  string $key
+     * @param  mixed $default
      * @return mixed
      */
     public function get($key, $default = null)
@@ -82,7 +81,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Convert the Fluent instance to JSON.
      *
-     * @param  int  $options
+     * @param  int $options
      * @return string
      */
     public function toJson($options = 0)
@@ -93,7 +92,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Determine if the given offset exists.
      *
-     * @param  string  $offset
+     * @param  string $offset
      * @return bool
      */
     public function offsetExists($offset)
@@ -104,7 +103,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Get the value for a given offset.
      *
-     * @param  string  $offset
+     * @param  string $offset
      * @return mixed
      */
     public function offsetGet($offset)
@@ -115,8 +114,8 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Set the value at the given offset.
      *
-     * @param  string  $offset
-     * @param  mixed   $value
+     * @param  string $offset
+     * @param  mixed $value
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -127,7 +126,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Unset the value at the given offset.
      *
-     * @param  string  $offset
+     * @param  string $offset
      * @return void
      */
     public function offsetUnset($offset)
@@ -138,8 +137,8 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Handle dynamic calls to the container to set attributes.
      *
-     * @param  string  $method
-     * @param  array   $parameters
+     * @param  string $method
+     * @param  array $parameters
      * @return $this
      */
     public function __call($method, $parameters)
@@ -152,7 +151,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Dynamically retrieve the value of an attribute.
      *
-     * @param  string  $key
+     * @param  string $key
      * @return mixed
      */
     public function __get($key)
@@ -163,8 +162,8 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Dynamically set the value of an attribute.
      *
-     * @param  string  $key
-     * @param  mixed   $value
+     * @param  string $key
+     * @param  mixed $value
      * @return void
      */
     public function __set($key, $value)
@@ -175,7 +174,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Dynamically check if an attribute is set.
      *
-     * @param  string  $key
+     * @param  string $key
      * @return bool
      */
     public function __isset($key)
@@ -186,7 +185,7 @@ class FieldFluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
     /**
      * Dynamically unset an attribute.
      *
-     * @param  string  $key
+     * @param  string $key
      * @return void
      */
     public function __unset($key)
