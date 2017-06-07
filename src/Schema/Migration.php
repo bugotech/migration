@@ -1,5 +1,18 @@
 <?php namespace Bugotech\Migration\Schema;
 
+/**
+ * Class Migration
+ * @package Bugotech\Migration\Schema
+ * @method createFieldString
+ * @method createFieldInteger
+ * @method createFieldNumber
+ * @method createFieldBoolean
+ * @method createFieldDateTime
+ * @method createFieldDate
+ * @method createFieldTime
+ * @method createFieldText
+ * @method createFieldAssociation
+ */
 class Migration extends \Illuminate\Database\Migrations\Migration
 {
     use MigrationCommands;
