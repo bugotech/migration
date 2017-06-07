@@ -1,8 +1,7 @@
 <?php namespace Bugotech\Migration\Schema;
 
 /**
- * Class Migration
- * @package Bugotech\Migration\Schema
+ * Class Migration.
  * @method createFieldString
  * @method createFieldInteger
  * @method createFieldNumber
