@@ -35,6 +35,7 @@ trait MigrationCommands
             $name = strtolower(str_replace('createField', '', $name));
             $tableName = $arguments[0];
             array_shift($arguments);
+
             return $this->table($tableName, function (Table $table) use ($name, $arguments) {
                 return call_user_func_array([$table, $name], $arguments);
             });
