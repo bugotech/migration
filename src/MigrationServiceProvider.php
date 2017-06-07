@@ -9,7 +9,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
      * Register the migrator service.
      *
      * @return void
-     */
+     *
     protected function registerMigrator()
     {
         // The migrator is responsible for actually running and rollback the migration
@@ -20,7 +20,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
 
             return new Migrator($repository, $app['db'], $app['files']);
         });
-    }
+    }/**/
 
     /**
      * Register all of the migration commands.
