@@ -2,6 +2,8 @@
 
 class Migration extends \Illuminate\Database\Migrations\Migration
 {
+    use MigrationCommands;
+
     /**
      * @var \Illuminate\Database\Connection
      */
