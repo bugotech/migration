@@ -25,6 +25,18 @@ trait MigrationCommands
     }
 
     /**
+     * Excluir campo.
+     * @param $tableName
+     * @param $fieldName
+     */
+    public function dropField($tableName, $fieldName)
+    {
+        $this->table($tableName, function (Table $table) use ($fieldName) {
+            $table->dropColumn($fieldName);
+        });
+    }
+
+    /**
      * @param $name
      * @param $arguments
      * @throws \Exception
