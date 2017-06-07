@@ -35,10 +35,14 @@ trait MigrationCommands
             $name = strtolower(str_replace('createField', '', $name));
             $tableName = $arguments[0];
             array_shift($arguments);
+            $after = end($arguments);
 
-            return $this->table($tableName, function (Table $table) use ($name, $arguments) {
-                return call_user_func_array([$table, $name], $arguments);
-            });
+            $table = $this->getTable($tableName);
+            $col = call_user_func_array([$table, $name], $arguments);
+            $col->after($after);
+            $this->buildTable($table);
+
+            return $col;
         }
 
         throw new \Exception(sprintf('Method "%s" not found in the class "%s"', $name, get_class($this)));

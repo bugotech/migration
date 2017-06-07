@@ -50,6 +50,33 @@ class Migration extends \Illuminate\Database\Migrations\Migration
         $tb->build($this->con, $this->grammar);
     }
 
+    /**
+     * Create e retorna um Table.
+     * @param $table
+     * @param bool $create
+     * @return Table
+     */
+    protected function getTable($table, $create = false)
+    {
+        $tb = new Table($this->builder, $table);
+
+        if ($create) {
+            $tb->create();
+            $tb->engine = 'InnoDB';
+        }
+
+        return $tb;
+    }
+
+    /**
+     * Compilar um Table.
+     * @param Table $table
+     */
+    protected function buildTable(Table $table)
+    {
+        $table->build($this->con, $this->grammar);
+    }
+
     public function drop($table)
     {
         $this->builder->dropIfExists($table);
