@@ -36,10 +36,10 @@ trait MigrationCommands
             $tableName = $arguments[0];
             array_shift($arguments);
             $this->table($tableName, function(Table $table) use($name, $arguments) {
-                call_user_func_array([$table, $name], $arguments);
+                return call_user_func_array([$table, $name], $arguments);
             });
         }
 
-        throw new \Exception(sprintf('Method %s not found in the class %s', $name, get_class($this)));
+        throw new \Exception(sprintf('Method "%s" not found in the class "%s"', $name, get_class($this)));
     }
 }

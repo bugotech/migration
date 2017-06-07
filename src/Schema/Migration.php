@@ -24,7 +24,7 @@ class Migration extends \Illuminate\Database\Migrations\Migration
      */
     public function __construct()
     {
-        $this->con = db($this->getConnection());
+        $this->con = db()->connection($this->getConnection());
         $this->builder = $this->con->getSchemaBuilder();
         $this->grammar = $this->con->getSchemaGrammar();
     }
