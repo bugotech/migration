@@ -39,7 +39,7 @@ trait MigrationCommands
             $table = $this->getTable($tableName);
             $col = call_user_func_array([$table, $name], $arguments);
 
-            return new FieldFluent($table, $col->getAttributes());
+            return new FieldFluent($table, $col);
         }
 
         throw new \Exception(sprintf('Method "%s" not found in the class "%s"', $name, get_class($this)));
