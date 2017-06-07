@@ -19,7 +19,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
         // and register each one of them with an application container. They will
         // be resolved in the Artisan start file and registered on the console.
         foreach ($commands as $command) {
-            $this->{'register'.$command.'Command'}();
+            $this->{'register' . $command . 'Command'}();
         }
 
         // Once the commands are registered in the application IoC container we will
