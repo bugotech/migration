@@ -35,12 +35,9 @@ trait MigrationCommands
             $name = strtolower(str_replace('createField', '', $name));
             $tableName = $arguments[0];
             array_shift($arguments);
-            $after = end($arguments);
 
             $table = $this->getTable($tableName);
             $col = call_user_func_array([$table, $name], $arguments);
-            $col->after($after);
-            $this->buildTable($table);
 
             return $col;
         }

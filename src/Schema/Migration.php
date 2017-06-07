@@ -65,16 +65,9 @@ class Migration extends \Illuminate\Database\Migrations\Migration
             $tb->engine = 'InnoDB';
         }
 
-        return $tb;
-    }
+        $tb->setToBuild($this->con, $this->grammar);
 
-    /**
-     * Compilar um Table.
-     * @param Table $table
-     */
-    protected function buildTable(Table $table)
-    {
-        $table->build($this->con, $this->grammar);
+        return $tb;
     }
 
     public function drop($table)

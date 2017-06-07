@@ -1,9 +1,21 @@
 <?php namespace Bugotech\Migration\Schema;
 
+use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Schema\Grammars\Grammar;
 
 class Table extends \Illuminate\Database\Schema\Blueprint
 {
+    /**
+     * @var Connection
+     */
+    protected $connection;
+
+    /**
+     * @var Grammar
+     */
+    protected $grammar;
+
     /**
      * @var Builder
      */
@@ -20,6 +32,24 @@ class Table extends \Illuminate\Database\Schema\Blueprint
         $this->builder = $builder;
         $this->table = $table;
         parent::__construct($table, $callback);
+    }
+
+    /**
+     * @param Connection $connection
+     * @param Grammar $grammar
+     */
+    public function setToBuild(Connection $connection, Grammar $grammar)
+    {
+        $this->connection = $connection;
+        $this->grammar = $grammar;
+    }
+
+    /**
+     * Compilar alteração.
+     */
+    public function compile()
+    {
+        $this->build($this->connection, $this->grammar);
     }
 
     /**
