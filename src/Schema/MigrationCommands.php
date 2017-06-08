@@ -8,10 +8,14 @@ trait MigrationCommands
      * Criar tabela.
      * @param string $tableName
      */
-    public function createTable($tableName)
+    public function createTable($tableName, $extend = '')
     {
-        $this->create($tableName, function (Table $table) {
-            $table->key();
+        $this->create($tableName, function (Table $table) use ($extend) {
+            if ($extend != '') {
+                $table->extend($extend);
+            } else {
+                $table->key();
+            }
         });
     }
 
