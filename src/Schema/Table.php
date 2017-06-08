@@ -84,7 +84,6 @@ class Table extends \Illuminate\Database\Schema\Blueprint
     /**
      * Campo de extensao.
      */
-    /*
     public function extend($table)
     {
         // Criar campo
@@ -102,7 +101,6 @@ class Table extends \Illuminate\Database\Schema\Blueprint
 
         return $col;
     }
-    /**/
 
     /**
      * Campo String (varchar).
