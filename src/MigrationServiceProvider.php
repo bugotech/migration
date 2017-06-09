@@ -26,7 +26,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
         // register them with the Artisan start event so that these are available
         // when the Artisan application actually starts up and is getting used.
         $this->commands(
-            'command.migrate','command.migrate.install','command.migrate.status'
+            'command.migrate', 'command.migrate.install', 'command.migrate.status'
             /*'command.migrate.make',
             'command.migrate.rollback',
             'command.migrate.reset', 'command.migrate.refresh', */
