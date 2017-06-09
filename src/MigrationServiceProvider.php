@@ -13,7 +13,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
     protected function registerCommands()
     {
         //$commands = ['Migrate', 'Rollback', 'Reset', 'Refresh', 'Install', 'Make', 'Status'];
-        $commands = ['Migrate', 'Rollback', 'Reset', 'Refresh', 'Install', 'Status'];
+        $commands = ['Migrate', 'Status'];
 
         // We'll simply spin through the list of commands that are migration related
         // and register each one of them with an application container. They will
@@ -26,9 +26,9 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
         // register them with the Artisan start event so that these are available
         // when the Artisan application actually starts up and is getting used.
         $this->commands(
-            'command.migrate', /*'command.migrate.make',*/
+            'command.migrate', /*'command.migrate.make',
             'command.migrate.install', 'command.migrate.rollback',
-            'command.migrate.reset', 'command.migrate.refresh',
+            'command.migrate.reset', 'command.migrate.refresh', */
             'command.migrate.status'
         );
     }
