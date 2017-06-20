@@ -1,0 +1,4 @@
+auto-service: bugotech.migration
+
+services:
+ - \Bugotech\Migration\MigrationServiceProvider
