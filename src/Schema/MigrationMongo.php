@@ -10,6 +10,12 @@ class MigrationMongo extends \Illuminate\Database\Migrations\Migration
     protected $con;
 
     /**
+     * Nome da conexão.
+     * @var string
+     */
+    protected $connection = 'mongodb';
+
+    /**
      * @var \Illuminate\Database\Schema\Builder
      */
     protected $builder;
