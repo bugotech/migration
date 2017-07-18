@@ -12,9 +12,9 @@
     ],
 
     "require": {
-        "php"                 : ">=5.5.9",
-        "illuminate/database" : "5.2.*",
-        "bugotech/io"         : "1.0.*"
+        "php"        : ">=5.5.9",
+        "bugotech/db": "dev-master",
+        "bugotech/io": "1.0.*"
     },
 
     "autoload": {
