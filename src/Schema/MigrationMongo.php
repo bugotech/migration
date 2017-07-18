@@ -1,14 +1,7 @@
 <?php namespace Bugotech\Migration\Schema;
 
-use Jenssegers\Mongodb\Schema\Blueprint;
-
 class MigrationMongo extends \Illuminate\Database\Migrations\Migration
 {
-    /**
-     * @var \Illuminate\Database\Connection
-     */
-    protected $con;
-
     /**
      * Nome da conexão.
      * @var string
@@ -16,35 +9,22 @@ class MigrationMongo extends \Illuminate\Database\Migrations\Migration
     protected $connection = 'mongodb';
 
     /**
-     * @var \Illuminate\Database\Schema\Builder
+     * @param $tableName
+     * @param string $extend
      */
-    protected $builder;
-
-    /**
-     * @var \Illuminate\Database\Schema\Grammars\Grammar
-     */
-    protected $grammar;
-
-    /**
-     * Preparar Migration.
-     */
-    public function __construct()
-    {
-        $this->con = db()->connection($this->getConnection());
-        $this->builder = $this->con->getSchemaBuilder();
-        $this->grammar = $this->con->getSchemaGrammar();
-    }
-
     public function createTable($tableName, $extend = '')
     {
-        $tb = new Blueprint($this->con, $tableName);
-        $tb->create();
-        $tb->build($this->con, $this->grammar);
+        schema($this->getConnection())->create($tableName, function() {
+            //..
+        });
     }
 
+    /**
+     * @param $table
+     */
     public function dropTable($table)
     {
-        $this->builder->dropIfExists($table);
+        schema($this->getConnection())->dropIfExists($table);
     }
 
     /**
