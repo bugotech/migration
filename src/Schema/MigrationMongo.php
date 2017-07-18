@@ -14,7 +14,7 @@ class MigrationMongo extends \Illuminate\Database\Migrations\Migration
      */
     public function createTable($tableName, $extend = '')
     {
-        schema($this->getConnection())->create($tableName, function() {
+        schema($this->getConnection())->create($tableName, function () {
             //..
         });
     }
