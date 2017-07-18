@@ -4,8 +4,6 @@ use Jenssegers\Mongodb\Schema\Blueprint;
 
 class MigrationMongo extends \Illuminate\Database\Migrations\Migration
 {
-    use MigrationCommands;
-
     /**
      * @var \Illuminate\Database\Connection
      */
